@@ -1,0 +1,23 @@
+Airpurifier
+===========================
+        intheritance
+===========================
+varaible
+- brand = "Xiaomi" (default)
+- model 
+- serial number 
+- status = on || off
+
+method
+- turn on = set status to on
+- turn off = set status to off
+- power consumtion = 
+
+===========================
+           class
+===========================
+varaible
+- 
+
+method
+-
