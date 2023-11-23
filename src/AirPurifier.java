@@ -7,6 +7,7 @@ public class AirPurifier {
     String serialNo;
     boolean status; 
     String mode; 
+    int temperature;
 
     static int manufacturedCount = 0;
     static Set<String> modelSet = new HashSet<>();
@@ -16,6 +17,7 @@ public class AirPurifier {
         this.serialNo = serialNo;
         this.status = false; // เริ่มต้นเป็น off
         this.mode = "Auto"; // เริ่มต้นทำงานในโหมด Auto
+        this.temperature = 25;
         manufacturedCount++;
         modelSet.add(model);
     }
@@ -77,6 +79,7 @@ public class AirPurifier {
         System.out.println("Model: " + purifier1.model);
         System.out.println("Status: " + (purifier1.status ? "On" : "Off"));
         System.out.println("Mode: " + purifier1.mode);  
+        System.out.println("Temperature: " + purifier1.temperature + "°C");
         System.out.println("PM2.5: " + String.format("%03d", 1));
         System.out.println("===========================");
     }
