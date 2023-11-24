@@ -31,7 +31,6 @@ varaible
 
 method
 - mostPopularModel = get the most popular model
-- argManufacturedCount = calculate and get the average count of every model
 
 
 
