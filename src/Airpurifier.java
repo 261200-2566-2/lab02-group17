@@ -1,26 +1,72 @@
+import java.util.HashSet;
+import java.util.Set;
 
-public class Airpurifier {
+public class AirPurifier extends Sensor{
     String brand = "Xiaomi";
     String model;
     String serialNo;
-    boolean status; // on or off
+    boolean status; 
+    String mode;
+    String filterType; 
 
-    void turnOff() {status = false;}
-    void turnOn() {status = true;}
-    double powConsump() {};
+    static int manufacturedCount = 0;
+    static Set<String> modelSet = new HashSet<>();
 
-    static int manufacCount; // ผลิตไปกี่ชิ้น
-    static String modelCount;// มีรุ่นอะไรบ้างที่ผลิต
-    static String mostPopModel() {}; // รุ่นที่นิยมสุด
-    static double averageModel() {};// ค่าเฉลียแต่ละรุ่น
-
-    Airpurifier(String  model, String  serialNo){
+    AirPurifier(String model, String serialNo) {
         this.model = model;
         this.serialNo = serialNo;
+        this.status = false; // เริ่มต้นเป็น off
+        this.mode = "Auto"; // เริ่มต้นทำงานในโหมด Auto
+        this.filterType = "Pleated Filter"; // ไส้กรองที่เอาไว้กรองpm2.5ปกติ
+        this.temp = measureTemp();
+        this.pmLevel = measurePM();
+        manufacturedCount++;
+        modelSet.add(model);
+    }
+    
+    void turnOn() {status = true;}
+    void turnOff() {status = false;}
+    double powerConsumption() {return 0.0;}
+
+    void changeMode(String modeNumber) {
+        switch (modeNumber) {
+            case "1":
+                mode = "Sleep";
+                break;
+            case "2":
+                mode = "Favorite";
+                break;
+            case "3":
+                mode = "Auto";
+                break;
+        }
     }
 
+    static String mostPopularModel() {
+        String mostPopularModel = null;
+        for (String model : modelSet) { }
+        return mostPopularModel;
+    }
+    static double averagePowerConsumption() {
+        double totalPowerConsumption = 0.0;
+        for (String model : modelSet) { }
+        return 0.0;
+    }
 
     public static void main(String[] args) {
-
+        AirPurifier purifier1 = new AirPurifier("Model1", "SN001");
+        
+        purifier1.turnOn(); // เปิดเครื่อง เริ่มต้นตั้งเป็นปิดไว้
+        purifier1.changeMode("3"); // เปลี่ยนโหมด ใช้หลักการสวิตเคส 1 คือ สลิป 2 คือ แบบบตั้งค่าเอง 3 คือ ออโต้
+        
+        System.out.println("===========================");
+        System.out.println("Brand: " + purifier1.brand);
+        System.out.println("Model: " + purifier1.model);
+        System.out.println("Status: " + (purifier1.status ? "On" : "Off"));
+        System.out.println("Mode: " + purifier1.mode);  
+        System.out.println("Temperature: " + purifier1.temp + "°C");
+        System.out.println("P.M. 2.5 Level : " + purifier1.pmLevel );
+        System.out.println("PM2.5: " + String.format("%03d", 1));
+        System.out.println("===========================");
     }
 }
