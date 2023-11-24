@@ -20,6 +20,7 @@ method
 - changeMode = 1 sleep
              = 2 setting
              = 3 auto
+- get data = get data of airpurifier
 
 ===========================
            class
