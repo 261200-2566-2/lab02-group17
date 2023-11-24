@@ -26,7 +26,14 @@ public class AirPurifier extends Sensor{
     
     void turnOn() {status = true;}
     void turnOff() {status = false;}
-    double powerConsumption() {return 0.0;}
+    double powerConsumption() {
+        double powerConsumption = 0.0;
+        if(status == true){
+            // calculate
+            return powerConsumption;
+        }
+        return powerConsumption;
+     }
 
     void changeMode(String modeNumber) {
         switch (modeNumber) {
@@ -42,16 +49,16 @@ public class AirPurifier extends Sensor{
         }
     }
 
-    static String mostPopularModel() {
-        String mostPopularModel = null;
-        for (String model : modelSet) { }
-        return mostPopularModel;
-    }
-    static double averagePowerConsumption() {
-        double totalPowerConsumption = 0.0;
-        for (String model : modelSet) { }
-        return 0.0;
-    }
+    // static String mostPopularModel() {
+    //     String mostPopularModel = null;
+    //     for (String model : modelSet) {  }
+    //     return mostPopularModel;
+    // }
+    // static double argManufacturedCount() {
+    //     double TotalArgManufacturedCount = 0.0;
+    //     for (String model : modelSet) {  }
+    //     return 0.0;
+    // }
 
     public static void main(String[] args) {
         AirPurifier purifier1 = new AirPurifier("Model1", "SN001");
