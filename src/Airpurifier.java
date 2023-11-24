@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-public class AirPurifier extends Sensor{
+public class Airpurifier extends Sensor{
     String brand = "Xiaomi";
     String model;
     String serialNo;
@@ -12,7 +12,7 @@ public class AirPurifier extends Sensor{
     static int manufacturedCount = 0;//สมมติว่าโรงงานพึ่งเปิดตัว ยังไม่เคยผลิต
     static Set<String> modelSet = new HashSet<>();
 
-    AirPurifier(String model, String serialNo) {
+    Airpurifier(String model, String serialNo) {
         this.model = model;
         this.serialNo = serialNo;
         this.status = false; // เริ่มต้นเป็น off
@@ -49,19 +49,19 @@ public class AirPurifier extends Sensor{
         }
     }
 
-    // static String mostPopularModel() {
-    //     String mostPopularModel = null;
-    //     for (String model : modelSet) {  }
-    //     return mostPopularModel;
-    // }
-    // static double argManufacturedCount() {
-    //     double TotalArgManufacturedCount = 0.0;
-    //     for (String model : modelSet) {  }
-    //     return 0.0;
-    // }
+    static String mostPopularModel() {
+        String mostPopularModel = null;
+        for (String model : modelSet) {  }
+        return mostPopularModel;
+    }
+    static double argManufacturedCount() {
+        double TotalArgManufacturedCount = 0.0;
+        for (String model : modelSet) {  }
+        return 0.0;
+    }
 
     public static void main(String[] args) {
-        AirPurifier purifier1 = new AirPurifier("Model1", "SN001");
+        Airpurifier purifier1 = new Airpurifier("Model1", "SN001");
         
         purifier1.turnOn(); // เปิดเครื่อง เริ่มต้นตั้งเป็นปิดไว้
         purifier1.changeMode("3"); // เปลี่ยนโหมด ใช้หลักการสวิตเคส 1 คือ สลิป 2 คือ แบบบตั้งค่าเอง 3 คือ ออโต้
