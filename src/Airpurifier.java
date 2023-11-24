@@ -9,7 +9,7 @@ public class AirPurifier extends Sensor{
     String mode;
     String filterType; 
 
-    static int manufacturedCount = 0;
+    static int manufacturedCount = 0;//สมมติว่าโรงงานพึ่งเปิดตัว ยังไม่เคยผลิต
     static Set<String> modelSet = new HashSet<>();
 
     AirPurifier(String model, String serialNo) {
