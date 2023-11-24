@@ -9,8 +9,8 @@ public class Airpurifier extends Sensor{
     String mode;
     String filterType; 
 
-    static int manufacturedCount = 0;//สมมติว่าโรงงานพึ่งเปิดตัว ยังไม่เคยผลิต
-    static Set<String> modelSet = new HashSet<>();
+    private static int manufacturedCount = 0;//สมมติว่าโรงงานพึ่งเปิดตัว ยังไม่เคยผลิต
+    private static Set<String> modelSet = new HashSet<>();
 
     Airpurifier(String model, String serialNo) {
         this.model = model;
@@ -48,32 +48,26 @@ public class Airpurifier extends Sensor{
                 break;
         }
     }
-
-    static String mostPopularModel() {
+    private static String mostPopularModel() {
         String mostPopularModel = null;
         for (String model : modelSet) {  }
         return mostPopularModel;
     }
-    static double argManufacturedCount() {
+    private static double argManufacturedCount() {
         double TotalArgManufacturedCount = 0.0;
         for (String model : modelSet) {  }
         return 0.0;
     }
 
-    public static void main(String[] args) {
-        Airpurifier purifier1 = new Airpurifier("Model1", "SN001");
-        
-        purifier1.turnOn(); // เปิดเครื่อง เริ่มต้นตั้งเป็นปิดไว้
-        purifier1.changeMode("3"); // เปลี่ยนโหมด ใช้หลักการสวิตเคส 1 คือ สลิป 2 คือ แบบบตั้งค่าเอง 3 คือ ออโต้
-        
+    void getData(Airpurifier purifier1) {        
         System.out.println("===========================");
         System.out.println("Brand: " + purifier1.brand);
         System.out.println("Model: " + purifier1.model);
         System.out.println("Status: " + (purifier1.status ? "On" : "Off"));
         System.out.println("Mode: " + purifier1.mode);  
         System.out.println("Temperature: " + purifier1.temp + "°C");
-        System.out.println("P.M. 2.5 Level : " + purifier1.pmLevel );
-        System.out.println("PM2.5: " + String.format("%03d", 1));
+        System.out.println("PM2.5 Level: " + purifier1.pmLevel );
+        System.out.println("Filter Type: " + purifier1.filterType );
         System.out.println("===========================");
     }
 }

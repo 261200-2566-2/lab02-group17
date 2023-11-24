@@ -1,3 +1,5 @@
+* using Airpurifier class from Main class
+
 Airpurifier
 ===========================
         intheritance
@@ -29,3 +31,19 @@ varaible
 method
 - mostPopularModel = get the most popular model
 - argManufacturedCount = calculate and get the average count of every model
+
+
+
+
+Sensor
+===========================
+        intheritance
+===========================
+varaible
+- temperature;
+- PM Level;
+
+method
+- measure temperature = get data from temperature sensor
+- measure PM = get data from PM sensor
+
