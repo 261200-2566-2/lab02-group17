@@ -53,11 +53,6 @@ public class Airpurifier extends Sensor{
         for (String model : modelSet) {  }
         return mostPopularModel;
     }
-    private static double argManufacturedCount() {
-        double TotalArgManufacturedCount = 0.0;
-        for (String model : modelSet) {  }
-        return 0.0;
-    }
 
     void getData(Airpurifier purifier1) {        
         System.out.println("===========================");
