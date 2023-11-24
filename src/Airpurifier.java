@@ -9,8 +9,8 @@ public class Airpurifier extends Sensor{
     String mode;
     String filterType; 
 
-    private static int manufacturedCount = 0;//สมมติว่าโรงงานพึ่งเปิดตัว ยังไม่เคยผลิต
-    private static Set<String> modelSet = new HashSet<>();
+    static int manufacturedCount = 0;//สมมติว่าโรงงานพึ่งเปิดตัว ยังไม่เคยผลิต
+    static Set<String> modelSet = new HashSet<>();
 
     Airpurifier(String model, String serialNo) {
         this.model = model;
@@ -48,9 +48,21 @@ public class Airpurifier extends Sensor{
                 break;
         }
     }
-    private static String mostPopularModel() {
+    static String mostPopularModel() {
         String mostPopularModel = null;
-        for (String model : modelSet) {  }
+        int max = 0;
+        for (String model : modelSet) {  
+            int count = 0;
+            for(String i : modelSet){
+                if(i.equals(model)){
+                    count++;
+                }
+            }
+            if(count > max){
+                max = count;
+                mostPopularModel = model;
+            }
+        }
         return mostPopularModel;
     }
 
