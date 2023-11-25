@@ -1,0 +1,49 @@
+* using Airpurifier class from Main class
+
+Airpurifier
+===========================
+        intheritance
+===========================
+varaible
+- brand = "Xiaomi" (default)
+- model 
+- serial number 
+- status = on || off
+- mode = sleep / setting / auto
+- filter typr = "Pleated Filter" (default)
+
+method
+- turn on <no need to pass argument> = set status to on 
+- turn off <no need to pass argument> = set status to off 
+- power consumtion <input = status> = if it turn off = 0  
+                                    = if it turn on have to calculate
+- changeMode <intput = mode number from button> = 1 sleep
+             = 2 setting
+             = 3 auto
+- get data <no need to pass argument> = get data of airpurifier
+
+===========================
+           class
+===========================
+varaible
+- manufacturedCount = 0 (default)
+- modelSet = set of Model that have been manufactured
+
+method
+- mostPopularModel = get the most popular model
+
+
+
+
+Sensor
+===========================
+        intheritance
+===========================
+varaible
+- temperature;
+- PM Level;
+
+method
+- measure temperature <no need to pass argument> = get data from temperature sensor
+- measure PM <no need to pass argument> = get data from PM sensor
+
